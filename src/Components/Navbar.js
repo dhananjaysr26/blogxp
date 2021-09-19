@@ -4,7 +4,9 @@ import { MdDashboard, MdLocalPostOffice, MdFindInPage } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import { BiMenu } from "react-icons/bi";
 import { FaPlus } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 function Navbar() {
+    let history = useHistory();
     const [menu, setMenu] = useState(0);
     return (
         <div className={menu ? "sidebar-active" : "sidebar"}>
@@ -13,10 +15,10 @@ function Navbar() {
             </div>
             <div className="sidebar-menu">
                 <ul>
-                    <li><MdDashboard className="sidebar-icons" /><a>Dashboard</a></li>
-                    <li><MdLocalPostOffice className="sidebar-icons" />Post Page</li>
-                    <li><MdFindInPage className="sidebar-icons" />Link Page</li>
-                    <li><BsThreeDots className="sidebar-icons" />Others</li>
+                    <li onClick={() => { history.push("/"); setMenu(0); }}><MdDashboard className="sidebar-icons" /><a>Dashboard</a></li>
+                    <li onClick={() => { history.push("/post-page"); setMenu(0); }}><MdLocalPostOffice className="sidebar-icons" />Post Page</li>
+                    <li onClick={() => { history.push("/post-links"); setMenu(0); }}><MdFindInPage className="sidebar-icons" />Link Page</li>
+                    <li onClick={() => { setMenu(0); alert("Coming Soon!"); }}><BsThreeDots className="sidebar-icons" />Others</li>
                 </ul>
             </div>
             <div className="header-content">
