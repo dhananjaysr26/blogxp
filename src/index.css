@@ -1,13 +1,186 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --main-color: #ffff;
+  --secondary-color: #f8c29eb0;
+  --text-grey: #8390a2;
+}
+/*   --main-color: #ffff;
+  --secondary-color: #8fd9fb;
+  --text-grey: #8390a2; */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-style: "Poppins", sans-serif;
+}
+/* sidebar */
+.sidebar {
+  width: 200px;
+  position: fixed;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  background: var(--main-color);
+  transition: 0.9s;
+}
+.sidebar-active {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--main-color);
+  transition: 0.5s;
+}
+.sidebar-band h2 {
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.sidebar-brand span {
+  display: inline-block;
+  padding-right: 2rem;
+}
+.sidebar-menu li {
+  width: 100%;
+  margin-bottom: 1.3rem;
+  /* text-transform: uppercase; */
+  padding-left: 2rem;
+}
+.sidebar-menu li:hover {
+  background: rgb(41, 40, 40);
+  color: var(--main-color);
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 30px 0px 0px 30px;
+}
+.sidebar-menu ul {
+  display: block;
+  color: rgb(100, 98, 98);
+  font-size: 1.5rem;
+}
+.sidebar-icons {
+  margin-right: 10px;
+}
+.header-menu {
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 25px;
+}
+.header-content {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.header-content header {
+  height: 60px;
+}
+.main-content {
+  margin-top: 50px;
+}
+.header-content {
+  margin-left: 200px;
+}
+.header-content header {
+  background: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  display: flex;
+}
+.user-wrapper {
+  right: 10px;
+  position: fixed;
+}
+/* main-body */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 60px;
+  background: var(--main-color);
+  padding: 10px;
+}
+.card-single {
+  display: flex;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  padding-left: 10px;
+}
+.card-single h4,
+.cards-icon {
+  color: black;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.cards-text {
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-top: 10px;
+}
+.card-single span {
+  font-size: 32px;
+  float: right;
+}
+/* Post */
+.post-container {
+  width: 100%;
+  background: var(--main-color);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  padding: 10px;
+}
+.post-card {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--secondary-color);
+  margin: 10px;
+  margin-bottom: 10px;
+}
+.post-hint h4 {
+  justify-content: center;
+  text-align: end;
+  font-weight: normal;
+  cursor: pointer;
+}
+.post-hint h4:hover {
+  font-weight: bold;
+}
+/* Chart */
+.chart-container {
+  width: 100%;
+  background: var(--main-color);
+  color: rgb(19, 16, 16);
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.chart {
+  padding: 20px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 1000px) {
+  .cards {
+    display: block;
+    margin-top: 70px;
+  }
 }
