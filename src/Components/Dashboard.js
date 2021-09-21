@@ -86,7 +86,7 @@ function Dashboard() {
                     post.map((postData) => {
                         return (
                             <div className="post-card">
-                                <h1>{postData.title} <a href={postData.url}><GoLinkExternal className="view-post" /></a></h1>
+                                <h1>{postData.title} <a href={postData.url} target="_blank"><GoLinkExternal className="view-post" /></a></h1>
                                 <h4>{postData.excerpt}</h4>
                                 <div className="post-hint">
                                     <h3>#tech #React #git #coding</h3>
